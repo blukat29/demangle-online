@@ -1,0 +1,7 @@
+.border {
+    border: 1px solid black;
+}
+
+textarea {
+    font-family: monospace;
+}
