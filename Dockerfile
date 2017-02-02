@@ -1,18 +1,7 @@
-FROM ubuntu:16.04
+FROM tiangolo/uwsgi-nginx-flask:flask-python3.5
 
-RUN sed -i 's/archive.ubuntu.com/kr.archive.ubuntu.com/g' /etc/apt/sources.list
+# Remove sample application included in the base image.
+RUN rm /app/main.py /app/uwsgi.ini
 
-RUN apt-get update && apt-get -y install \
-    python3 python3-pip \
-    binutils \
-    libffi-dev \
-    && apt-get clean
-
-RUN mkdir /unmangle
-COPY bin/ /unmangle/bin/
-COPY web/ /unmangle/web/
-
-RUN pip3 install -r /unmangle/web/requirements.txt
-
-EXPOSE 8000
-ENTRYPOINT /unmangle/web/manage.py
+COPY /bin /opt/bin
+COPY /web /app
