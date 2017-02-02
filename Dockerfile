@@ -4,7 +4,9 @@ RUN sed -i 's/archive.ubuntu.com/kr.archive.ubuntu.com/g' /etc/apt/sources.list
 
 RUN apt-get update && apt-get -y install \
     python3 python3-pip \
-    binutils
+    binutils \
+    libffi-dev \
+    && apt-get clean
 
 RUN mkdir /unmangle
 COPY bin/ /unmangle/bin/
