@@ -1,9 +1,12 @@
 # demangle-online
 
 Demangle compiler-generated symbols in your browser.
-Currently supports C++ (g++), D (dlang), Haskell (GHC), Swift (Swift-Linux)
+Currently supports:
 
-[Demo](http://ec2-13-112-110-142.ap-northeast-1.compute.amazonaws.com/)
+* C++ (g++)
+* D (dlang)
+* Haskell (GHC)
+* Swift (Swift-Linux)
 
 ## Screenshot
 
